@@ -1,0 +1,22 @@
+{
+  "name" : "ship87/json-csv-converter-php",
+  "description" : "Convert JSON to CSV using php",
+  "keywords" : [ "Convert JSON", "CSV", "Convert JSON to CSV using php" ],
+  "license" : "MIT",
+  "authors" : [
+    {
+      "name" : "Roman Shipelov",
+      "email" : "theship87@gmail.com"
+    }
+  ],
+  "require" : {
+    "php": ">=7.2",
+    "vlucas/phpdotenv": "4.1.*"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "JsonCsvConverter\\" : "app"
+    }
+  },
+  "minimum-stability": "dev"
+}

@@ -1,0 +1,21 @@
+version: '3'
+services:
+    nginx:
+        build:
+            context: ./
+            dockerfile: nginx.docker
+        ports:
+            - 8080:8080
+        links:
+            - php
+        volumes:
+             - ./:/var/www
+    php:
+        build:
+            context: ./
+            dockerfile: php.docker
+        working_dir: /var/www
+        ports:
+            - 9001:9000
+        volumes:
+            - ./:/var/www

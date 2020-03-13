@@ -1,0 +1,18 @@
+FROM php:7.4-fpm-alpine
+
+ENV JSON_CSV_CONVERTER_PHP_DIRECTORY_DOWNLOAD=download
+ENV JSON_CSV_CONVERTER_PHP_PATTERN_FILE_NAME=result-*.csv
+ENV JSON_CSV_CONVERTER_PHP_APP_URL=http://localhost:8080
+ENV JSON_CSV_CONVERTER_PHP_APP_PORT=8080
+
+COPY composer.json /var/www/
+
+WORKDIR /var/www
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+COPY . /var/www
+
+EXPOSE 9000
+
+CMD ["php-fpm"]
